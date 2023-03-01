@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Commodities\Ajax\CommodityAjaxController;
 use App\Http\Controllers\Commodities\CommodityController;
 use App\Http\Controllers\Commodities\CommodityExportImportController;
 use App\Http\Controllers\Commodities\PdfController;
