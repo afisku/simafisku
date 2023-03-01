@@ -44,8 +44,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/settings', [SettingController::class, 'simpan'])->name('settings.simpan');
 
     Route::group(['prefix' => 'barang', 'as' => 'barang.'], function () {
-        Route::get('/print', [PdfController::class, 'generatedPdf'])->name('print');
-        Route::get('/print/{id}', [PdfController::class, 'generatedPdfOne'])->name('print.one');
+        Route::get('/print', [PdfController::class, 'generatePdf'])->name('print');
+        Route::get('/print/{id}', [PdfController::class, 'generatePdfOne'])->name('print.one');
     });
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
