@@ -24,7 +24,7 @@ class CommodityExportImportController extends Controller
     {
         try {
             Excel::import(new Import, request()->file('file'));
-            return redirect()->back()->with('sukses', 'Import barang Berhasil');
+            return redirect()->back()->with('success', 'Import barang Berhasil');
         } catch (\Throwable $th) {
             return redirect()->back()->withErrors('Gagal, Pastikan Import Data Anda Sesuai');
         }

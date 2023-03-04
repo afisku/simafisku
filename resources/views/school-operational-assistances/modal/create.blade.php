@@ -22,7 +22,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="description">Deskripsi</label>
-                                <textarea name="description" class="form-control" id="description_create" cols="30" rows="10"></textarea>
+                                <textarea name="description" class="form-control" id="description_create" rows="6" style="height: auto"></textarea>
                             </div>
                         </div>
                     </div>
