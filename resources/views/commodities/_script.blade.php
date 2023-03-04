@@ -1,5 +1,58 @@
+<script src="{{ asset('js/currency.js') }}"></script>
 <script>
     $(document).ready(function() {
+        $('#upload_foto_barang').change(function() {
+            let file = this.files[0];
+            if (file) {
+                $('#foto-barang-preview').removeClass('d-none');
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#foto-barang-preview').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+            } else {
+                $('#foto-barang-preview').attr('src', '');
+                $('#foto-barang-preview').addClass('d-none');
+            }
+        });
+
+        $('#upload_foto_nota').change(function() {
+            let file = this.files[0];
+            if (file) {
+                console.log('asd');
+                $('#foto-nota-preview').removeClass('d-none');
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#foto-nota-preview').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+            } else {
+                $('#foto-nota-preview').attr('src', '');
+                $('#foto-nota-preview').addClass('d-none');
+            }
+        });
+
+        $('#quantity_create').on("change keyup paste click", function() {
+            let pricePerItem = rupiahKeAngka($('#price_per_item_create').val());
+            let qty = $(this).val();
+            let total = qty * pricePerItem;
+            $('#price_create').val(total != 0 ? angkaKeRupiah(total) : '');
+        });
+
+        $('#price_per_item_create').on("change keyup paste click", function() {
+            let pricePerItem = rupiahKeAngka($(this).val());
+            let qty = $('#quantity_create').val();
+            let total = qty * pricePerItem;
+            $('#price_create').val(total != 0 ? angkaKeRupiah(total) : '');
+        });
+
+        $('#item_code_create').on("change keyup paste click", function() {
+            var Text = $(this).val();
+            Text = Text.toLowerCase();
+            Text = Text.replace(/[^a-zA-Z0-9]+/g, '-');
+            $('#item_code_create').val(Text);
+        });
+
         $(".show_modal").click(function() {
             let id = $(this).data("id")
             let token = $("input[name=_token]").val();
@@ -19,9 +72,9 @@
                     $("#brand").val(data.data.brand)
                     $("#material").val(data.data.material)
                     $("#date_of_purchase").val(data.data.date_of_purchase)
-                    $("#school_operational_assistance_id").html(data.data.school_operational_assistance_id)
+                    $("#school_operational_assistance_id").html(data.data
+                        .school_operational_assistance_id)
                     $("#quantity").val(data.data.quantity)
-                    $("#price").val(data.data.price)
                     $("#price_per_item").val(data.data.price_per_item)
                     $("#note").html(data.data.note)
                 }
@@ -30,53 +83,78 @@
 
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
-            let token = $("input[name=_token]").val();
+
+            let token = "{{ csrf_token() }}";
+            let inputData = new FormData(this);
+            inputData.append('_token', token);
 
             $.ajax({
                 type: "POST",
                 url: "commodities/json",
-                data: {
-                    _token: token,
-                    school_operational_assistance_id: $("#school_operational_assistance_id_create").val(),
-                    commodity_location_id: $("#commodity_location_id_create").val(),
-                    item_code: $("#item_code_create").val(),
-                    name: $("#name_create").val(),
-                    brand: $("#brand_create").val(),
-                    material: $("#material_create").val(),
-                    date_of_purchase: $("#date_of_purchase_create").val(),
-                    condition: $("#condition_create").val(),
-                    quantity: $("#quantity_create").val(),
-                    price: $("#price_create").val(),
-                    price_per_item: $("#price_per_item_create").val(),
-                    note: $("#note_create").val(),
-                },
+                processData: false,
+                contentType: false,
+                cache: false,
+                enctype: 'multipart/form-data',
+                data: inputData,
                 success: function(data) {
+                    if (data.status) {
+                        Swal.fire({
+                            title: "Barang",
+                            text: data.message,
+                            icon: "success",
+                            timerProgressBar: true,
+                            onBeforeOpen: () => {
+                                Swal.showLoading();
+                                timerInterval = setInterval(() => {
+                                    const content = Swal.getContent();
+                                    if (content) {
+                                        const b = content.querySelector(
+                                            "b");
+                                        if (b) {
+                                            b.textContent = Swal
+                                                .getTimerLeft();
+                                        }
+                                    }
+                                }, 100);
+                            },
+                            showConfirmButton: false
+                        });
+                        setTimeout(function() {
+                            location.reload();
+                        }, 500)
+                    } else {
+                        Swal.fire({
+                            title: "Barang",
+                            html: data.message,
+                            icon: "error",
+                            showConfirmButton: false,
+                            showCancelButton: true,
+                            cancelButtonText: 'Tutup'
+                        });
+                    }
+                },
+                error: function(data) {
                     Swal.fire({
-                        title: "Berhasil",
-                        text: "Data berhasil ditambahkan.",
-                        icon: "success",
+                        title: "Gagal",
+                        text: "Data gagal ditambahkan.",
+                        icon: "error",
                         timerProgressBar: true,
                         onBeforeOpen: () => {
                             Swal.showLoading();
                             timerInterval = setInterval(() => {
                                 const content = Swal.getContent();
                                 if (content) {
-                                    const b = content.querySelector("b");
+                                    const b = content.querySelector(
+                                        "b");
                                     if (b) {
-                                        b.textContent = Swal.getTimerLeft();
+                                        b.textContent = Swal
+                                            .getTimerLeft();
                                     }
                                 }
                             }, 100);
                         },
                         showConfirmButton: false
                     });
-                    setTimeout(function() {
-                        location.reload();
-                    }, 500)
-                },
-                error: function(data) {
-                    console.log('gagal');
-                    console.log(data);
                 }
             })
         })
@@ -96,7 +174,8 @@
                     _token: token
                 },
                 success: function(data) {
-                    $("#school_operational_assistance_id_edit").val(data.data.school_operational_assistance_id)
+                    $("#school_operational_assistance_id_edit").val(data.data
+                        .school_operational_assistance_id)
                     $("#commodity_location_id_edit").val(data.data.commodity_location_id)
                     $("#item_code_edit").val(data.data.item_code)
                     $("#name_edit").val(data.data.name)
@@ -110,7 +189,8 @@
                     $("#note_edit").val(data.data.note)
                 },
                 error: function(data) {
-                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.", "warning");
+                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.",
+                        "warning");
                 }
             });
         });
@@ -129,7 +209,8 @@
                 type: "PUT",
                 data: {
                     _token: token,
-                    school_operational_assistance_id: $("#school_operational_assistance_id_edit").val(),
+                    school_operational_assistance_id: $(
+                        "#school_operational_assistance_id_edit").val(),
                     commodity_location_id: $("#commodity_location_id_edit").val(),
                     item_code: $("#item_code_edit").val(),
                     name: $("#name_edit").val(),
@@ -153,9 +234,11 @@
                             timerInterval = setInterval(() => {
                                 const content = Swal.getContent();
                                 if (content) {
-                                    const b = content.querySelector("b");
+                                    const b = content.querySelector(
+                                        "b");
                                     if (b) {
-                                        b.textContent = Swal.getTimerLeft();
+                                        b.textContent = Swal
+                                            .getTimerLeft();
                                     }
                                 }
                             }, 100);
@@ -202,11 +285,16 @@
                                 onBeforeOpen: () => {
                                     Swal.showLoading();
                                     timerInterval = setInterval(() => {
-                                        const content = Swal.getContent();
+                                        const content = Swal
+                                            .getContent();
                                         if (content) {
-                                            const b = content.querySelector("b");
+                                            const b = content
+                                                .querySelector(
+                                                    "b");
                                             if (b) {
-                                                b.textContent = Swal.getTimerLeft();
+                                                b.textContent =
+                                                    Swal
+                                                    .getTimerLeft();
                                             }
                                         }
                                     }, 100);
@@ -225,6 +313,5 @@
                 }
             });
         });
-
-    })
+    });
 </script>

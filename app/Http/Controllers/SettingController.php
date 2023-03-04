@@ -41,6 +41,6 @@ class SettingController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->back()->with('sukses', 'Profil berhasil diubah');
+        return redirect()->back()->with('success', 'Profil berhasil diubah');
     }
 }

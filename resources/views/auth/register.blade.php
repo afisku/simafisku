@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ url('assets/css/components.css') }}">
   
-  <link rel="shortcut icon" href="../assets/img/sdmuhbrosot.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/img/FITYAN.png" type="image/x-icon">
 </head>
 
 <body>

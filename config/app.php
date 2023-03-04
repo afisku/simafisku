@@ -19,6 +19,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name Short
+    |--------------------------------------------------------------------------
+    |
+    | This value is the short name of your application. This value is used when the
+    | framework needs to place the application's short name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'short_name' => env('APP_NAME_SHORT', 'Laravel'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
