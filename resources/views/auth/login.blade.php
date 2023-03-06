@@ -24,7 +24,7 @@
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                     <div class="p-4 m-3">
                         <img src="../assets/img/fityan.png" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
-                        <h5 class="text-dark font-weight-normal">Aplikasi <span class="font-weight-bold">{{ config('app.name') }}</span></h5>
+                        <h5 class="text-dark font-weight-normal">SIM <span class="font-weight-bold">{{ config('app.name') }}</span></h5>
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
