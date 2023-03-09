@@ -13,17 +13,38 @@
           <table class="table">
             <tr>
               <td style="width: 145px;">
-                <b>Nama</b>
+                <b>Nama Gedung</b>
               </td>
               <td style="width: 20px;">:</td>
+              <td id="nmgedung"></td>
+            </tr>
+            <tr>
+              <td>
+                <b>Nama Ruangan</b>
+              </td>
+              <td>:</td>
               <td id="name"></td>
+            </tr>
+            <tr>
+              <td>
+                <b>Kode Ruangan</b>
+              </td>
+              <td>:</td>
+              <td id="kdr"></td>
+            </tr>
+            <tr>
+              <td>
+                <b>PJ Ruangan</b>
+              </td>
+              <td>:</td>
+              <td id="idkaryawan"></td>
             </tr>
             <tr>
               <td>
                 <b>Deskripsi</b>
               </td>
               <td>:</td>
-              <td id="description"></td>
+              <td id="deskripsi"></td>
             </tr>
           </table>
         </div>

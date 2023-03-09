@@ -12,8 +12,11 @@
                     _token: token
                 },
                 success: function(data) {
-                    $("#modalLabel").html(data.data.name)
+                    $("#modalLabel").html(data.data.nmgedung)
+                    $("#nmgedung").html(data.data.nmgedung)
                     $("#name").html(data.data.name)
+                    $("#kdr").html(data.data.kdr)
+                    $("#idkaryawan").html(data.data.idkaryawan)
                     $("#description").html(data.data.description)
                 }
             })

@@ -1,4 +1,4 @@
-@extends('layouts.stisla.index', ['title' => 'Halaman Data Ruang', 'page_heading' => 'Daftar Gedung dan Ruangan'])
+@extends('layouts.stisla.index', ['title' => 'Halaman Data Ruang', 'page_heading' => 'Daftar Ruangan'])
 
 @section('content')
 <div class="card">
@@ -19,7 +19,10 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Nama</th>
+              <th scope="col">Gedung</th>
+              <th scope="col">Nama Ruangan</th>
+              <th scope="col">PJ Ruangan</th>
+              <th scope="col">Kode Ruangan</th>
               <th scope="col">Deskripsi</th>
               <th scope="col">Tanggal Ditambahkan</th>
               <th scope="col">Aksi</th>
@@ -29,7 +32,10 @@
             @foreach($commodity_locations as $commodity_location)
             <tr>
               <th scope="row">{{ $loop->iteration }}</th>
+              <td>{{ $commodity_location->nmgedung }}</td>
               <td>{{ $commodity_location->name }}</td>
+              <td>{{ $commodity_location->kdr }}</td>
+              <td>{{ $commodity_location->idkaryawan }}</td>
               <td>{{ Str::limit($commodity_location->description, 55, '...') }}</td>
               <td>{{ $commodity_location->created_at }}</td>
               <td class="text-center">
