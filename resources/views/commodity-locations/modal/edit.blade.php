@@ -14,8 +14,29 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <label for="name">Nama</label>
+                <label for="nmgedung">Nama Gedung</label>
+                <input type="text" name="nmgedung" class="form-control" id="nmgedung_edit">
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="name">Nama Ruangan</label>
                 <input type="text" name="name" class="form-control" id="name_edit">
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="kdr">Kode Ruangan</label>
+                <input type="text" name="kdr" class="form-control" id="kdr_edit">
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="idkaryawan">PJ Ruangan</label>
+                <input type="text" name="idkaryawan" class="form-control" id="idkaryawan_edit">
               </div>
             </div>
 

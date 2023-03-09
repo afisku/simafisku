@@ -37,7 +37,10 @@
                     _token: token
                 },
                 success: function(data) {
+                    $("#nmgedung_edit").val(data.data.nmgedung)
                     $("#name_edit").val(data.data.name)
+                    $("#kdr_edit").val(data.data.kdr)
+                    $("#idkaryawan_edit").val(data.data.idkaryawan)
                     $("#description_edit").val(data.data.description)
                 },
                 error: function(data) {
@@ -56,7 +59,10 @@
                     type: "PUT",
                     data: {
                         _token: token,
+                        nmgedung: $("#nmgedung_edit").val(),
                         name: $("#name_edit").val(),
+                        kdr: $("#kdr_edit").val(),
+                        idkaryawan: $("#idkaryawan_edit").val(),                        
                         description: $("#description_edit").val()
                     },
                     success: function(data) {
@@ -99,7 +105,10 @@
                 url: "commodity-locations/json",
                 data: {
                     _token: token,
+                    nmgedung: $("#nmgedung_create").val(),
                     name: $("#name_create").val(),
+                    kdr: $("#kdr_create").val(),
+                    idkaryawan: $("#idkaryawan_create").val(),
                     description: $("#description_create").val()
                 },
                 success: function(data) {

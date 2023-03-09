@@ -37,7 +37,10 @@ class CommodityLocationAjaxController extends Controller
     public function store(Request $request)
     {
         $commodity_location = new CommodityLocation();
+        $commodity_location->nmgedung = $request->nmgedung;
         $commodity_location->name = $request->name;
+        $commodity_location->kdr = $request->kdr;
+        $commodity_location->idkaryawan = $request->idkaryawan;
         $commodity_location->description = $request->description;
         $commodity_location->save();
 
@@ -80,7 +83,10 @@ class CommodityLocationAjaxController extends Controller
     public function update(Request $request, $id)
     {
         $commodity_location = CommodityLocation::findOrFail($id);
+        $commodity_location->nmgedung = $request->nmgedung;
         $commodity_location->name = $request->name;
+        $commodity_location->kdr = $request->kdr;
+        $commodity_location->idkaryawan = $request->idkaryawan;
         $commodity_location->description = $request->description;
         $commodity_location->save();
 
