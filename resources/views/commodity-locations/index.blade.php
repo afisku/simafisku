@@ -1,4 +1,4 @@
-@extends('layouts.stisla.index', ['title' => 'Halaman Data Ruang', 'page_heading' => 'Daftar Ruang'])
+@extends('layouts.stisla.index', ['title' => 'Halaman Data Ruang', 'page_heading' => 'Daftar Gedung dan Ruangan'])
 
 @section('content')
 <div class="card">
