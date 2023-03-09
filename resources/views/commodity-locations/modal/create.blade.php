@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="commodity_location_create_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Data</h5>
@@ -12,13 +12,13 @@
                 <form name="commodity_location_create">
                     @csrf
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="nmgedung">Nama Gedung</label>
                                 <input type="text" name="nmgedung" class="form-control" id="nmgedung_create">
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="name">Nama Ruangan</label>
                                 <input type="text" name="name" class="form-control" id="name_create">
@@ -39,7 +39,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="description">Deskripsi</label>
-                                <textarea name="description" class="form-control" id="description_create" cols="30" rows="10"></textarea>
+                                <textarea name="description" class="form-control" id="description_create" rows="6" style="height: auto"></textarea>
                             </div>
                         </div>
                     </div>
