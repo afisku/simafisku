@@ -16,8 +16,8 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item dropdown {{ Request::segment(2) === 'ruang' ? 'active' : '' }}">
-                <a href="{{ route('ruang.index') }}" class="nav-link">
+            <li class="nav-item dropdown {{ Request::segment(2) === 'surat' ? 'active' : '' }}">
+                <a href="{{ route('surat.index') }}" class="nav-link">
                     <i class="fas fa-th"></i> 
                     <span>Data Surat</span>
                 </a>
@@ -43,6 +43,31 @@
                 <li class="nav-item dropdown {{ Request::segment(2) === 'ruang' ? 'active' : '' }}">
                     <a href="{{ route('ruang.index') }}" class="nav-link">
                     <span>Data Ruangan</span>
+                    </a>
+                </li>
+                </ul>
+            </li>
+
+            <li
+                class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-user"></i>
+                    <span>Guru & Staf</span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="nav-item dropdown {{ Request::segment(2) === 'barang' ? 'active' : '' }}">
+                    <a href="{{ route('barang.index') }}" class="nav-link">
+                    <span>Biodata</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown {{ Request::segment(2) === 'bantuan-dana-operasional' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('bantuan-dana-operasional.index') }}">
+                    <span>Unit</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown {{ Request::segment(2) === 'ruang' ? 'active' : '' }}">
+                    <a href="{{ route('ruang.index') }}" class="nav-link">
+                    <span>Jabatan</span>
                     </a>
                 </li>
                 </ul>

@@ -6,15 +6,20 @@
 
             $.ajax({
                 type: "GET",
-                url: "school-operational/json/" + id,
+                url: "data-surat/json/" + id,
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    $("#modalLabel").html(data.data.name)
+                    $("#modalLabel").html(data.data.jenis_surat)
                     $("#name").html(data.data.name)
-                    $("#description").html(data.data.description)
+                    $("#nomor_surat").html(data.data.nomor_surat)
+                    $("#kategori_surat").html(data.data.kategori_surat)
+                    $("#tgl_surat").html(data.data.tgl_surat)
+                    $("#tujuan_pengiriman").html(data.data.tujuan_pengiriman)
+                    $("#perihal").html(data.data.perihal)
+                    $("#keterangan").html(data.data.keterangan)
                 }
             })
         })
@@ -90,17 +95,24 @@
             });
         });
 
-        $("form[name='school_operational_assistance_create']").submit(function(e) {
+        $("form[name='data_surat_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
 
             $.ajax({
                 type: "POST",
-                url: "school-operational/json",
+                url: "data-surat/json",
                 data: {
                     _token: token,
-                    name: $("#name_create").val(),
-                    description: $("#description_create").val()
+                    jenis_surat: $("#jenis_surat_create").val(),
+                    nomor_surat: $("#nomor_surat_create").val(),
+                    kategori_surat: $("#kategori_surat_create").val(),
+                    tgl_surat: $("#tgl_surat_create").val(),
+                    tujuan_pengiriman: $("#tujuan_pengiriman_create").val(),
+                    perihal: $("#perihal_create").val(),
+                    keterangan: $("#keterangan_create").val(),
+                    tahun_ajaran_id: $("#tahun_ajaran_id_create").val(),
+                    foto_surat: $("foto_surat_create").val(),
                 },
                 success: function(data) {
                     Swal.fire({

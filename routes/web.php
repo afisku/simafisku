@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SchoolOperationalAssistances\Ajax\SchoolOperationalAssistanceAjaxController;
 use App\Http\Controllers\SchoolOperationalAssistances\SchoolOperationalAssistance;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Surat\SuratController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/barang', CommodityController::class);
     Route::resource('/bantuan-dana-operasional', SchoolOperationalAssistance::class);
     Route::resource('/ruang', CommodityLocationController::class);
+    Route::resource('/surat', SuratController::class);
 
     Route::resource('/commodities/json', CommodityAjaxController::class);
     Route::resource('/school-operational/json', SchoolOperationalAssistanceAjaxController::class);
