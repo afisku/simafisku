@@ -21,8 +21,8 @@
               <th scope="col">#</th>
               <th scope="col">Gedung</th>
               <th scope="col">Nama Ruangan</th>
-              <th scope="col">PJ Ruangan</th>
               <th scope="col">Kode Ruangan</th>
+              <th scope="col">PJ Ruangan</th>
               <th scope="col">Deskripsi</th>
               <th scope="col">Tanggal Ditambahkan</th>
               <th scope="col">Aksi</th>
