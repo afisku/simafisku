@@ -55,8 +55,8 @@
                     <span>Guru & Staf</span>
                 </a>
                 <ul class="dropdown-menu">
-                <li class="nav-item dropdown {{ Request::segment(2) === 'barang' ? 'active' : '' }}">
-                    <a href="{{ route('barang.index') }}" class="nav-link">
+                <li class="nav-item dropdown {{ Request::segment(2) === 'karyawan' ? 'active' : '' }}">
+                    <a href="{{ route('karyawan.index') }}" class="nav-link">
                     <span>Biodata</span>
                     </a>
                 </li>

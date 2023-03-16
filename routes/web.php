@@ -7,10 +7,13 @@ use App\Http\Controllers\Commodities\PdfController;
 use App\Http\Controllers\CommodityLocations\Ajax\CommodityLocationAjaxController;
 use App\Http\Controllers\CommodityLocations\CommodityLocationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Karyawan\Ajax\KaryawanAjaxController;
+use App\Http\Controllers\Karyawan\KaryawanController;
 use App\Http\Controllers\SchoolOperationalAssistances\Ajax\SchoolOperationalAssistanceAjaxController;
 use App\Http\Controllers\SchoolOperationalAssistances\SchoolOperationalAssistance;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Surat\SuratController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,9 +56,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/barang', CommodityController::class);
     Route::resource('/bantuan-dana-operasional', SchoolOperationalAssistance::class);
     Route::resource('/ruang', CommodityLocationController::class);
+    Route::resource('/karyawan', KaryawanController::class);
     Route::resource('/surat', SuratController::class);
 
     Route::resource('/commodities/json', CommodityAjaxController::class);
     Route::resource('/school-operational/json', SchoolOperationalAssistanceAjaxController::class);
+    Route::resource('/school-karyawan/json', KaryawanAjaxController::class);
     Route::resource('/commodity-locations/json', CommodityLocationAjaxController::class);
 });
