@@ -41,12 +41,7 @@ class KaryawanAjaxController extends Controller
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data_karyawan], 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
         $data_karyawan = Staf::findOrFail($id);
