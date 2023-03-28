@@ -25,13 +25,15 @@ class KaryawanAjaxController extends Controller
         $data_karyawan = new Staf();
         $data_karyawan->nm_karyawan = $request->nm_karyawan;
         $data_karyawan->tempat_tinggal = $request->tempat_tinggal;
-        $data_karyawan->tanggal_lahir = $request->tanggal_lahir;
+        $data_karyawan->tanggal_lahir = date_format(date_create($request->tanggal_lahir), "d-m-Y");
         $data_karyawan->bidang_studi = $request->bidang_studi;
         $data_karyawan->status_kepegawaian = $request->status_kepegawaian;
         $data_karyawan->id_jabatan = $request->id_jabatan;
         $data_karyawan->id_unit = $request->id_unit;
         $data_karyawan->id_kelas = $request->id_kelas;
         $data_karyawan->pendidikan_terakhir = $request->pendidikan_terakhir;
+        $data_karyawan->no_hp = $request->no_hp;
+        $data_karyawan->tgl_masuk_alfityan = $request->tgl_masuk_alfityan;
         $data_karyawan->pelatihan = $request->pelatihan;
         $data_karyawan->foto_karyawan = $request->foto_karyawan;
         $data_karyawan->save();
@@ -75,19 +77,25 @@ class KaryawanAjaxController extends Controller
     public function update(Request $request, $id)
     {
         $data_karyawan = Staf::findOrFail($id);
-        $data_karyawan->name = $request->name;
-        $data_karyawan->description = $request->description;
+        $data_karyawan->nm_karyawan = $request->nm_karyawan;
+        $data_karyawan->tempat_tinggal = $request->tempat_tinggal;
+        $data_karyawan->tanggal_lahir = date_format(date_create($request->tanggal_lahir), "d-m-Y");
+        $data_karyawan->bidang_studi = $request->bidang_studi;
+        $data_karyawan->status_kepegawaian = $request->status_kepegawaian;
+        $data_karyawan->id_jabatan = $request->id_jabatan;
+        $data_karyawan->id_unit = $request->id_unit;
+        $data_karyawan->id_kelas = $request->id_kelas;
+        $data_karyawan->pendidikan_terakhir = $request->pendidikan_terakhir;
+        $data_karyawan->no_hp = $request->no_hp;
+        $data_karyawan->tgl_masuk_alfityan = $request->tgl_masuk_alfityan;
+        $data_karyawan->pelatihan = $request->pelatihan;
+        $data_karyawan->foto_karyawan = $request->foto_karyawan;
         $data_karyawan->save();
 
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data_karyawan], 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         Staf::findOrFail($id)->delete();

@@ -117,7 +117,7 @@
                     no_hp: $("#no_hp_create").val(),
                     tgl_masuk_alfityan: $("#tgl_masuk_alfityan_create").val(),
                     foto_karyawan: $("#foto_karyawan_create").val(),
-                    pelatihan: $("#	pelatihan_create").val(),
+                    pelatihan: $("#pelatihan_create").val()
                 },
                 success: function(data) {
                     Swal.fire({
