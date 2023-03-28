@@ -6,18 +6,25 @@
 
             $.ajax({
                 type: "GET",
-                url: "commodity-locations/json/" + id,
+                url: "karyawan/json/" + id,
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    $("#modalLabel").html(data.data.nmgedung)
-                    $("#nmgedung").html(data.data.nmgedung)
-                    $("#name").html(data.data.name)
-                    $("#kdr").html(data.data.kdr)
-                    $("#idkaryawan").html(data.data.idkaryawan)
-                    $("#description").html(data.data.description)
+                    $("#nm_karyawan").html(data.data.nm_karyawan)
+                    $("#tempat_tinggal").html(data.data.tempat_tinggal)
+                    $("#tanggal_lahir").html(data.data.tanggal_lahir)
+                    $("#bidang_studi").html(data.data.bidang_studi)
+                    $("#status_kepegawaian").html(data.data.status_kepegawaian)
+                    $("#id_jabatan").html(data.data.id_jabatan)
+                    $("#id_unit").html(data.data.id_unit)
+                    $("#id_kelas").html(data.data.id_kelas)
+                    $("#pendidikan_terakhir").html(data.data.pendidikan_terakhir)
+                    $("#no_hp").html(data.data.no_hp)
+                    $("#tgl_masuk_alfityan").html(data.data.tgl_masuk_alfityan)
+                    $("#foto_karyawan").html(data.data.foto_karyawan)
+                    $("#pelatihan").html(data.data.pelatihan)
                 }
             })
         })
@@ -93,23 +100,24 @@
         $("form[name='karyawan_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
-
             $.ajax({
                 type: "POST",
                 url: "karyawan/json",
                 data: {
                     _token: token,
                     nm_karyawan: $("#nm_karyawan_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    name: $("#name_create").val(),
-                    description: $("#description_create").val()
+                    tempat_tinggal: $("#tempat_tinggal_create").val(),
+                    tanggal_lahir: $("#tanggal_lahir_create").val(),
+                    bidang_studi: $("#bidang_studi_create").val(),
+                    status_kepegawaian: $("#status_kepegawaian_create").val(),
+                    id_jabatan: $("#id_jabatan_create").val(),
+                    id_unit: $("#id_unit_create").val(),
+                    id_kelas: $("#id_kelas_create").val(),
+                    pendidikan_terakhir: $("#pendidikan_terakhir_create").val(),
+                    no_hp: $("#no_hp_create").val(),
+                    tgl_masuk_alfityan: $("#tgl_masuk_alfityan_create").val(),
+                    foto_karyawan: $("#foto_karyawan_create").val(),
+                    pelatihan: $("#	pelatihan_create").val(),
                 },
                 success: function(data) {
                     Swal.fire({
