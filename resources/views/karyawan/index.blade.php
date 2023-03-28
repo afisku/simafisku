@@ -4,7 +4,7 @@
 <div class="card">
   <div class="row">
     <div class="col-lg-12">
-      <button type="button" class="btn btn-primary float-right mt-3 mx-3" data-toggle="modal" data-target="#commodity_karyawan_modal">
+      <button type="button" class="btn btn-primary float-right mt-3 mx-3" data-toggle="modal" data-target="#karyawan_modal">
         <i class="fas fa-fw fa-plus"></i>
         Tambah Data
       </button>

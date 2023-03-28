@@ -1,6 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="karyawan_create_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="karyawan_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Tambah Data</h5>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="tempat_tinggal">Tempat Tinggal</label>
+                                <label for="tempat_tinggal">Alamat</label>
                                 <input type="text" name="tempat_tinggal" class="form-control" id="tempat_tinggal_create">
                             </div>
                         </div>
@@ -30,12 +30,7 @@
                                 <input type="text" name="tanggal_lahir" class="form-control" id="tanggal_lahir_create">
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label for="bidang_studi">bidang_studi</label>
-                                <input type="text" name="bidang_studi" class="form-control" id="bidang_studi_create">
-                            </div>
-                        </div>
+                    
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="bidang_studi">Bidang Studi</label>
@@ -77,11 +72,13 @@
                                 <label for="no_hp">No HP</label>
                                 <input type="text" name="no_hp" class="form-control" id="no_hp_create">
                             </div>
+                        </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="tgl_masuk_alfityan">TGL Masuk</label>
                                 <input type="text" name="tgl_masuk_alfityan" class="form-control" id="tgl_masuk_alfityan_create">
                             </div>
+                        </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="pelatihan">Pelatihan</label>
