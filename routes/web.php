@@ -62,5 +62,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/commodities/json', CommodityAjaxController::class);
     Route::resource('/school-operational/json', SchoolOperationalAssistanceAjaxController::class);
     Route::resource('/commodity-locations/json', CommodityLocationAjaxController::class);
-    Route::resource('/karyawan/json', KaryawanAjaxController::class);
+    Route::resource('/karyawanfityan/json', KaryawanAjaxController::class);
 });

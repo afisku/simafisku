@@ -102,7 +102,7 @@
             let token = $("input[name=_token]").val();
             $.ajax({
                 type: "POST",
-                url: "karyawan/json",
+                url: "karyawanfityan/json",
                 data: {
                     _token: token,
                     nm_karyawan: $("#nm_karyawan_create").val(),

@@ -17,6 +17,7 @@
                                 <label for="nm_karyawan">Nama Karyawan<small class="text-danger">*</small></label>
                                 <input type="text" name="nm_karyawan" class="form-control" id="nm_karyawan_create">
                             </div>
+
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -35,7 +36,7 @@
                                     id="tanggal_lahir_create">
                             </div>
                         </div>
-                    
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="bidang_studi">Bidang Studi
@@ -44,6 +45,7 @@
                                 <input type="text" name="bidang_studi" class="form-control" id="bidang_studi_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="status_kepegawaian">Status Kepegawaian
@@ -52,6 +54,7 @@
                                 <input type="text" name="status_kepegawaian" class="form-control" id="status_kepegawaian_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="id_jabatan">Jabatan
@@ -60,6 +63,7 @@
                                 <input type="text" name="id_jabatan" class="form-control" id="id_jabatan_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="id_unit">Unit Kerja
@@ -68,6 +72,7 @@
                                 <input type="text" name="id_unit" class="form-control" id="id_unit_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="id_kelas">Kelas
@@ -76,6 +81,7 @@
                                 <input type="text" name="id_kelas" class="form-control" id="id_kelas_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="pendidikan_terakhir">P-Terakhir
@@ -84,6 +90,7 @@
                                 <input type="text" name="pendidikan_terakhir" class="form-control" id="pendidikan_terakhir_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="no_hp">No. HP
@@ -92,6 +99,7 @@
                                 <input type="text" name="no_hp" class="form-control" id="no_hp_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="tgl_masuk_alfityan">TGL Masuk
@@ -100,12 +108,14 @@
                                 <input type="text" name="tgl_masuk_alfityan" class="form-control" id="tgl_masuk_alfityan_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="pelatihan">Pelatihan</label>
                                 <input type="text" name="pelatihan" class="form-control" id="pelatihan_create">
                             </div>
                         </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="foto_karyawan">Foto Profile
@@ -115,6 +125,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary">Tambah Data</button>
