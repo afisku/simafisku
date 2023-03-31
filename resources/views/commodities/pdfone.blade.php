@@ -22,16 +22,16 @@
 <body>
   <table class="center" border="1" cellpadding="0" cellspacing="0">
     <tr>
-      <td rowspan="3"><img src="assets/img/sdmuhbrosotmini.png" width="75px"></td>
-      <td colspan="2">Barang Milik {{$sekolah}}</td>
+      <td rowspan="3"><img src="assets/img/fityan.png" width="75px"></td>
+      <td colspan="2" style="text-align: center">{{$sekolah}}</td>
     </tr>
     <tr>
-      <th>Kode Barang</th>
+      <th>Kode</th>
       <td>{{ $commodity->item_code }}</td>
     </tr>
     <tr>
-      <th>Tanggal Beli</th>
-      <td>{{ $commodity->date_of_purchase }}</td>
+      <th>Tanggal Pembelian</th>
+      <td style="text-align: center">{{ $commodity->date_of_purchase }}</td>
     </tr>
   </table>
 </body>

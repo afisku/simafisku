@@ -26,16 +26,16 @@
       @foreach($commodities as $key => $commodity)
       <table class="center" border="1" cellpadding="0" cellspacing="0">
         <tr>
-          <td rowspan="3"><img src="assets/img/sdmuhbrosotmini.png" width="75px"></td>
-          <td colspan="2">{{$sekolah}}</td>
+          <td rowspan="3"><img src="assets/img/fityan.png" width="75px"></td>
+          <td colspan="2" style="text-align: center"><b>{{$sekolah}}</b></td>
         </tr>
         <tr>
-          <th>Kode Barang</th>
-          <td>{{ $commodity->item_code }}</td>
+          <th>Kode</th>
+          <td style="width: 150px; text-align: center">{{ $commodity->item_code }}</td>
         </tr>
         <tr>
-          <th>Tanggal Beli</th>
-          <td>{{ $commodity->date_of_purchase }}</td>
+          <th>Tanggal</th>
+          <td style="text-align: center">{{ $commodity->date_of_purchase }}</td>
         </tr>
       </table>
       <br>

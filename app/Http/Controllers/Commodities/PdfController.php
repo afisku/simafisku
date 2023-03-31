@@ -12,7 +12,7 @@ class PdfController extends Controller
     public function generatePdf()
     {
         $commodities = Commodity::all();
-        $sekolah = env('NAMA_SEKOLAH', 'Barang Milik Sekolah');
+        $sekolah = env('NAMA_SEKOLAH', 'DATA ASET SMP AFISKU');
         $pdf = PDF::loadView('commodities.pdf', compact(['commodities', 'sekolah']))->setPaper('a4');
         // return view('commodities.pdf', compact(['commodities', 'sekolah']));
         return $pdf->download('print.pdf');
@@ -21,7 +21,7 @@ class PdfController extends Controller
     public function generatePdfOne($id)
     {
         $commodity = Commodity::find($id);
-        $sekolah = env('NAMA_SEKOLAH', 'Barang Milik Sekolah');
+        $sekolah = env('NAMA_SEKOLAH', 'DATA ASET SMP AFISKU');
         $pdf = PDF::loadView('commodities.pdfone', compact(['commodity', 'sekolah']))->setPaper('a4');
 
         return $pdf->download('print.pdf');
