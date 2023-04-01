@@ -6,7 +6,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "karyawan/json/" + id,
+                url: "karyawanfityan/json/" + id,
                 data: {
                     id: id,
                     _token: token
@@ -37,18 +37,29 @@
             $("#swal-update-button").attr("data-id", id);
 
             $.ajax({
-                url: "commodity-locations/json/" + id + "/edit",
+                url: "karyawanfityan/json/" + id + "/edit",
                 type: "GET",
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    $("#name_edit").val(data.data.name)
-                    $("#description_edit").val(data.data.description)
+                    $("#nm_karyawan_edit").val(data.data.nm_karyawan)
+                    $("#tempat_tinggal_edit").val(data.data.tempat_tinggal)
+                    $("#tanggal_lahir_edit").val(data.data.tanggal_lahir)
+                    $("#bidang_studi_edit").val(data.data.bidang_studi)
+                    $("#status_kepegawaian_edit").val(data.data.status_kepegawaian)
+                    $("#id_jabatan_edit").val(data.data.id_jabatan)
+                    $("#id_unit_edit").val(data.data.id_unit)
+                    $("#id_kelas_edit").val(data.data.id_kelas)
+                    $("#pendidikan_terakhir_edit").val(data.data.pendidikan_terakhir)
+                    $("#no_hp_edit").val(data.data.no_hp)
+                    $("#tgl_masuk_alfityan_edit").val(data.data.tgl_masuk_alfityan)
+                    $("#foto_karyawan_edit").val(data.data.foto_karyawan)
+                    $("#pelatihan_edit").val(data.data.pelatihan)
                 },
                 error: function(data) {
-                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.", "warning");
+                    Swal.fire("Gagal!", "Tidak dapat melihat informasi.", "warning");
                 }
             });
 
@@ -59,12 +70,23 @@
                 let token = $("input[name=_token]").val();
 
                 $.ajax({
-                    url: "commodity-locations/json/" + id,
+                    url: "karyawanfityan/json/" + id,
                     type: "PUT",
                     data: {
                         _token: token,
-                        name: $("#name_edit").val(),
-                        description: $("#description_edit").val()
+                        nm_karyawan: $("#nm_karyawan_edit").val(),
+                        tempat_tinggal: $("#tempat_tinggal_edit").val(),
+                        tanggal_lahir: $("#tanggal_lahir_edit").val(),
+                        bidang_studi: $("#bidang_studi_edit").val(),
+                        status_kepegawaian: $("#status_kepegawaian_edit").val(),
+                        id_jabatan: $("#id_jabatan_edit").val(),
+                        id_unit: $("#id_unit_edit").val(),
+                        id_kelas: $("#id_kelas_edit").val(),
+                        pendidikan_terakhir: $("#pendidikan_terakhir_edit").val(),
+                        no_hp: $("#no_hp_edit").val(),
+                        tgl_masuk_alfityan: $("#tgl_masuk_alfityan_edit").val(),
+                        pelatihan: $("#pelatihan_edit").val(),
+                        foto_karyawan: $("#foto_karyawan_edit").val()
                     },
                     success: function(data) {
                         Swal.fire({
