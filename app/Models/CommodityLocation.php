@@ -12,4 +12,9 @@ class CommodityLocation extends Model
     {
         return $this->hasMany(Commodity::class);
     }
+
+    public function pj()
+    {
+        return $this->hasOne(Staf::class, 'id', 'idkaryawan');
+    }
 }

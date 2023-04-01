@@ -35,7 +35,7 @@
               <td>{{ $commodity_location->nmgedung }}</td>
               <td>{{ $commodity_location->name }}</td>
               <td>{{ $commodity_location->kdr }}</td>
-              <td>{{ $commodity_location->idkaryawan }}</td>
+              <td>{{ $commodity_location->pj->nm_karyawan }}</td>
               <td>{{ Str::limit($commodity_location->description, 55, '...') }}</td>
               <td>{{ $commodity_location->created_at }}</td>
               <td class="text-center">
