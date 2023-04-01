@@ -105,7 +105,7 @@
                                 <label for="tgl_masuk_alfityan">TGL Masuk
                                     <small class="text-danger">*</small>
                                 </label>
-                                <input type="text" name="tgl_masuk_alfityan" class="form-control" id="tgl_masuk_alfityan_create">
+                                <input type="date" name="tgl_masuk_alfityan" class="form-control" id="tgl_masuk_alfityan_create">
                             </div>
                         </div>
 
