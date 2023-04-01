@@ -1,5 +1,12 @@
+@push('css')
+    <link rel="stylesheet" href="{{ asset('modules/select2/dist/css/select2.min.css') }}">
+@endpush
+
+<script src="{{ asset('modules/select2/dist/js/select2.min.js') }}"></script>
 <script>
     $(document).ready(function() {
+        $('#idkaryawan_create').select2();
+
         $(".show_modal").click(function() {
             let id = $(this).data("id")
             let token = $("input[name=_token]").val();
@@ -44,7 +51,8 @@
                     $("#description_edit").val(data.data.description)
                 },
                 error: function(data) {
-                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.", "warning");
+                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.",
+                        "warning");
                 }
             });
 
@@ -62,7 +70,7 @@
                         nmgedung: $("#nmgedung_edit").val(),
                         name: $("#name_edit").val(),
                         kdr: $("#kdr_edit").val(),
-                        idkaryawan: $("#idkaryawan_edit").val(),                        
+                        idkaryawan: $("#idkaryawan_edit").val(),
                         description: $("#description_edit").val()
                     },
                     success: function(data) {
@@ -74,11 +82,14 @@
                             onBeforeOpen: () => {
                                 Swal.showLoading();
                                 timerInterval = setInterval(() => {
-                                    const content = Swal.getContent();
+                                    const content = Swal
+                                        .getContent();
                                     if (content) {
-                                        const b = content.querySelector("b");
+                                        const b = content
+                                            .querySelector("b");
                                         if (b) {
-                                            b.textContent = Swal.getTimerLeft();
+                                            b.textContent = Swal
+                                                .getTimerLeft();
                                         }
                                     }
                                 }, 100);
@@ -90,7 +101,8 @@
                         }, 800)
                     },
                     error: function(data) {
-                        Swal.fire("Gagal!", "Tidak dapat mengubah data.", "warning");
+                        Swal.fire("Gagal!", "Tidak dapat mengubah data.",
+                        "warning");
                     }
                 });
             });
@@ -122,9 +134,11 @@
                             timerInterval = setInterval(() => {
                                 const content = Swal.getContent();
                                 if (content) {
-                                    const b = content.querySelector("b");
+                                    const b = content.querySelector(
+                                    "b");
                                     if (b) {
-                                        b.textContent = Swal.getTimerLeft();
+                                        b.textContent = Swal
+                                            .getTimerLeft();
                                     }
                                 }
                             }, 100);
@@ -172,11 +186,16 @@
                                 onBeforeOpen: () => {
                                     Swal.showLoading();
                                     timerInterval = setInterval(() => {
-                                        const content = Swal.getContent();
+                                        const content = Swal
+                                            .getContent();
                                         if (content) {
-                                            const b = content.querySelector("b");
+                                            const b = content
+                                                .querySelector(
+                                                    "b");
                                             if (b) {
-                                                b.textContent = Swal.getTimerLeft();
+                                                b.textContent =
+                                                    Swal
+                                                    .getTimerLeft();
                                             }
                                         }
                                     }, 100);

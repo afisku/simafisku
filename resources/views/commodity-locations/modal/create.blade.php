@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="commodity_location_create_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="commodity_location_create_modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +34,13 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="idkaryawan">PJ Ruangan</label>
-                                <input type="text" name="idkaryawan" class="form-control" id="idkaryawan_create">
+                                <select name="idkaryawan" class="form-control" id="idkaryawan_create"
+                                    style="width: 100%" data-placeholder="Pilih Karyawan">
+                                    <option value=""></option>
+                                    @foreach ($daftar_staf as $staf)
+                                        <option value="{{ $staf->id }}">{{ $staf->nm_karyawan }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-12">

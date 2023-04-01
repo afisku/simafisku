@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CommodityLocations;
 
 use App\Models\CommodityLocation;
 use App\Http\Controllers\Controller;
+use App\Models\Staf;
 use Illuminate\Http\Request;
 
 class CommodityLocationController extends Controller
@@ -16,8 +17,9 @@ class CommodityLocationController extends Controller
     public function index()
     {
         $commodity_locations = CommodityLocation::orderBy('name', 'ASC')->get();
+        $daftar_staf = Staf::all();
 
-        return view('commodity-locations.index', compact('commodity_locations'));
+        return view('commodity-locations.index', compact('commodity_locations', 'daftar_staf'));
     }
 
     /**
