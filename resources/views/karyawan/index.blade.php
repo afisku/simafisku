@@ -22,7 +22,8 @@
               <th scope="col">Nama Karyawan</th>
               <th scope="col">Bidang Study</th>
               <th scope="col">Jabatan</th>
-              <th scope="col">No. HP</th>
+              <th scope="col">No.HP</th>
+              <th scope="col">Di Input</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
