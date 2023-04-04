@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('perihal');
             $table->string('keterangan')->nullable();
             $table->unsignedBigInteger('tahun_ajaran_id')->nullable();
-            $table->string('foto_surat')->nullable();
             $table->timestamps();
         });
     }

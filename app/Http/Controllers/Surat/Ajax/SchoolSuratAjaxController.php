@@ -1,60 +1,48 @@
 <?php
 
-namespace App\Http\Controllers\SchoolOperationalAssistances\Ajax;
+namespace App\Http\Controllers\Surat\Ajax;
 
 use App\Http\Controllers\Controller;
-use App\Models\SchoolOperationalAssistance;
+use App\Models\Datasurat;
 use Illuminate\Http\Request;
 
-class SchoolOperationalAssistanceAjaxController extends Controller
+class SchoolsuratAjaxController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        $school_operational_assistances = new SchoolOperationalAssistance();
-        $school_operational_assistances->name = $request->name;
-        $school_operational_assistances->description = $request->description;
-        $school_operational_assistances->save();
+        
+        $data_surat = new Datasurat();
+        $data_surat->jenis_surat = $request->jenis_surat;
+        $data_surat->nomor_surat = $request->nomor_surat;
+        $data_surat->	kategori_surat = $request->	kategori_surat;
+        $data_surat->tgl_surat = date_format(date_create($request->tgl_surat), "Y-m-d");
+        $data_surat->tujuan_pengiriman = $request->tujuan_pengiriman;
+        $data_surat->perihal = $request->perihal;
+        $data_surat->keterangan = $request->keterangan;
+        $data_surat->tahun_ajaran_id = $request->tahun_ajaran_id;
+        $data_surat->save();
 
-        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $school_operational_assistances], 200);
+        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data_surat], 200);
+    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        $school_operational_assistance = SchoolOperationalAssistance::findOrFail($id);
-
-        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $school_operational_assistance], 200);
+        //
     }
 
     /**
@@ -65,9 +53,7 @@ class SchoolOperationalAssistanceAjaxController extends Controller
      */
     public function edit($id)
     {
-        $school_operational_assistance = SchoolOperationalAssistance::findOrFail($id);
-
-        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $school_operational_assistance], 200);
+        //
     }
 
     /**
@@ -79,12 +65,7 @@ class SchoolOperationalAssistanceAjaxController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $school_operational_assistance = SchoolOperationalAssistance::findOrFail($id);
-        $school_operational_assistance->name = $request->name;
-        $school_operational_assistance->description = $request->description;
-        $school_operational_assistance->save();
-
-        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $school_operational_assistance], 200);
+        //
     }
 
     /**
@@ -95,8 +76,6 @@ class SchoolOperationalAssistanceAjaxController extends Controller
      */
     public function destroy($id)
     {
-        SchoolOperationalAssistance::findOrFail($id)->delete();
-
-        return response()->json(['status' => 200, 'message' => 'Success'], 200);
+        //
     }
 }

@@ -15,11 +15,11 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="condition_create">
+                                <label for="jenis_surat_create">
                                     Jenis Surat
                                     <small class="text-danger">*</small>
                                 </label>
-                                <select class="custom-select" name="condition" id="condition_create">
+                                <select class="custom-select" name="jenis_surat" id="jenis_surat_create">
                                     <option value="" selected>Pilih</option>
                                     <option value="1">SURAT MASUK</option>
                                     <option value="2">SURAT KELUAR</option>
@@ -36,11 +36,11 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="condition_create">
+                                <label for="kategori_surat_create">
                                     Kategori Surat
                                     <small class="text-danger">*</small>
                                 </label>
-                                <select class="custom-select" name="condition" id="condition_create">
+                                <select class="custom-select" name="kategori_surat" id="kategori_surat_create">
                                     <option value="" selected>Pilih</option>
                                     <option value="1">TUGAS</option>
                                     <option value="2">REKOMENDASI</option>
@@ -52,12 +52,12 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label for="date_of_purchase_create">
+                                <label for="tgl_surat_create">
                                     Tanggal surat
                                     <small class="text-danger">*</small>
                                 </label>
-                                <input type="date" class="form-control" name="date_of_purchase"
-                                    id="date_of_purchase_create">
+                                <input type="date" class="form-control" name="tgl_surat"
+                                    id="tgl_surat_create">
                             </div>
                         </div>
 
@@ -82,8 +82,18 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="foto_surat">Keterangan</label>
-                                <textarea name="foto_surat" class="form-control" id="foto_surat_create" rows="6" style="height: auto"></textarea>
+                                <label for="keterangan">Keterangan</label>
+                                <textarea name="keterangan" class="form-control" id="keterangan_create" rows="6" style="height: auto"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="tahun_ajaran_id">Th Ajaran</label>
+                                <textarea name="tahun_ajaran_id" class="form-control" id="tahun_ajaran_id_create" rows="6" style="height: auto"></textarea>
                             </div>
                         </div>
                     </div>

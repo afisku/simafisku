@@ -19,8 +19,8 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Tgl Surat</th>
               <th scope="col">Nomor Surat</th>
+              <th scope="col">Tgl Surat</th>              
               <th scope="col">Tujuan</th>
               <th scope="col">Perihal</th>
               <th scope="col">Ket</th>
@@ -36,7 +36,6 @@
               <td>{{ $data_surat->tujuan_pengiriman }}</td>
               <td>{{ $data_surat->perihal }}</td>
               <td>{{ Str::limit($data_surat->keterangan, 55, '...') }}</td>
-              <td>{{ $data_surat->created_at }}</td>
               <td class="text-center">
                 <a data-id="{{ $data_surat->id }}" class="btn btn-sm btn-info text-white show_modal" data-toggle="modal" data-target="#show_data_surat">
                   <i class="fas fa-fw fa-info"></i>

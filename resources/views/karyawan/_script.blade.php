@@ -187,7 +187,7 @@
                     let id = $(this).data("id");
                     let token = $("input[name=_token]").val();
                     $.ajax({
-                        url: "commodity-locations/json/" + id,
+                        url: "karyawanfityan/json/" + id,
                         type: "DELETE",
                         data: {
                             id: id,

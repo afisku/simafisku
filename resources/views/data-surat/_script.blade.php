@@ -101,7 +101,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "data-surat/json",
+                url: "datasurat/json",
                 data: {
                     _token: token,
                     jenis_surat: $("#jenis_surat_create").val(),
@@ -112,7 +112,6 @@
                     perihal: $("#perihal_create").val(),
                     keterangan: $("#keterangan_create").val(),
                     tahun_ajaran_id: $("#tahun_ajaran_id_create").val(),
-                    foto_surat: $("foto_surat_create").val(),
                 },
                 success: function(data) {
                     Swal.fire({

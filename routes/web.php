@@ -12,6 +12,7 @@ use App\Http\Controllers\Karyawan\KaryawanController;
 use App\Http\Controllers\SchoolOperationalAssistances\Ajax\SchoolOperationalAssistanceAjaxController;
 use App\Http\Controllers\SchoolOperationalAssistances\SchoolOperationalAssistance;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Surat\Ajax\SchoolsuratAjaxController;
 use App\Http\Controllers\Surat\SuratController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -62,5 +63,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/commodities/json', CommodityAjaxController::class);
     Route::resource('/school-operational/json', SchoolOperationalAssistanceAjaxController::class);
     Route::resource('/commodity-locations/json', CommodityLocationAjaxController::class);
+    Route::resource('/datasurat/json', SchoolsuratAjaxController::class);
     Route::resource('/karyawanfityan/json', KaryawanAjaxController::class);
 });
