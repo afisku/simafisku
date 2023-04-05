@@ -53,7 +53,9 @@ class SchoolsuratAjaxController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data_surat = Datasurat::findOrFail($id);
+
+        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data_surat], 200);
     }
 
     /**
@@ -65,7 +67,19 @@ class SchoolsuratAjaxController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data_surat = Datasurat::findOrFail($id);
+        $data_surat->jenis_surat = $request->jenis_surat;
+        $data_surat->nomor_surat = $request->nomor_surat;
+        $data_surat->kategori_surat = $request->kategori_surat;
+        $data_surat->tgl_surat = date_format(date_create($request->tgl_surat), "Y-m-d");
+        $data_surat->tujuan_pengiriman = $request->tujuan_pengiriman;
+        $data_surat->perihal = $request->perihal;
+        $data_surat->keterangan = $request->keterangan;
+        $data_surat->tahun_ajaran_id = $request->tahun_ajaran_id;
+        $data_surat->save();
+
+        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data_surat], 200);
+        
     }
 
     /**
@@ -76,6 +90,7 @@ class SchoolsuratAjaxController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Datasurat::findOrFail($id)->delete();
+        return response()->json(['status' => 200, 'message' => 'Success'], 200);
     }
 }

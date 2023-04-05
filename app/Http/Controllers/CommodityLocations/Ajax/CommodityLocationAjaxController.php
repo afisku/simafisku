@@ -82,7 +82,6 @@ class CommodityLocationAjaxController extends Controller
     public function destroy($id)
     {
         CommodityLocation::findOrFail($id)->delete();
-
         return response()->json(['status' => 200, 'message' => 'Success'], 200);
     }
 }

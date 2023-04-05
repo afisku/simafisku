@@ -13,7 +13,6 @@
                 },
                 success: function(data) {
                     $("#modalLabel").html(data.data.jenis_surat)
-                    $("#name").html(data.data.name)
                     $("#nomor_surat").html(data.data.nomor_surat)
                     $("#kategori_surat").html(data.data.kategori_surat)
                     $("#tgl_surat").html(data.data.tgl_surat)
@@ -32,18 +31,24 @@
             $("#swal-update-button").attr("data-id", id);
 
             $.ajax({
-                url: "school-operational/json/" + id + "/edit",
+                url: "datasurat/json/" + id + "/edit",
                 type: "GET",
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    $("#name_edit").val(data.data.name)
-                    $("#description_edit").val(data.data.description)
+                    $("#jenis_surat_edit").val(data.data.jenis_surat)
+                    $("#nomor_surat_edit").val(data.data.nomor_surat)
+                    $("#kategori_surat_edit").val(data.data.kategori_surat)
+                    $("#tgl_surat_edit").val(data.data.tgl_surat)
+                    $("#tujuan_pengiriman_edit").val(data.data.tujuan_pengiriman)
+                    $("#perihal_edit").val(data.data.perihal)
+                    $("#keterangan_edit").val(data.data.keterangan)
+                    $("#tahun_ajaran_id_edit").val(data.data.tahun_ajaran_id)
                 },
                 error: function(data) {
-                    Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.", "warning");
+                    Swal.fire("Gagal!", "Tidak dapat melihat informasi.", "warning");
                 }
             });
         });
@@ -58,12 +63,18 @@
             let description = $("#description_edit").val();
 
             $.ajax({
-                url: "school-operational/json/" + id,
+                url: "datasurat/json/" + id,
                 type: "PUT",
                 data: {
                     _token: token,
-                    name: $("#name_edit").val(),
-                    description: $("#description_edit").val()
+                    jenis_surat: $("#jenis_surat_edit").val(),
+                    nomor_surat: $("#nomor_surat_edit").val(),
+                    kategori_surat: $("#kategori_surat_edit").val(),
+                    tgl_surat: $("#tgl_surat_edit").val(),
+                    tujuan_pengiriman: $("#tujuan_pengiriman_edit").val(),
+                    perihal: $("#perihal_edit").val(),
+                    keterangan: $("#keterangan_edit").val(),
+                    tahun_ajaran_id: $("#tahun_ajaran_id_edit").val()
                 },
                 success: function(data) {
                     Swal.fire({
@@ -159,7 +170,7 @@
                     let id = $(this).data("id");
                     let token = $("input[name=_token]").val();
                     $.ajax({
-                        url: "school-operational/json/" + id,
+                        url: "datasurat/json/" + id,
                         type: "DELETE",
                         data: {
                             id: id,

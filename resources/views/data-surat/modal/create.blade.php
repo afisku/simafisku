@@ -12,7 +12,6 @@
                 <form name="data_surat_create">
                     @csrf
                     <div class="row">
-
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="jenis_surat_create">
@@ -102,7 +101,6 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary">Tambah Data</button>
                     </div>
-                
                 </form>
             </div>
         </div>
